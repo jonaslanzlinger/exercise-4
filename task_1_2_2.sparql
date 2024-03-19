@@ -1,6 +1,8 @@
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
- 
-SELECT DISTINCT ?person
+
+
+SELECT DISTINCT ?name
 WHERE {
    <https://wiser-solid-xi.interactions.ics.unisg.ch/Jonas/profile/card#me> (foaf:knows|^foaf:knows)+ ?person .
+   ?person (foaf:name|foaf:firstName|foaf:givenName)+ ?name .
 }
